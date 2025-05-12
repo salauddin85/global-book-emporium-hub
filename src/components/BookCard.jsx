@@ -36,14 +36,6 @@ const BookCard = ({ book }) => {
             alt={book.title} 
             className="book-card-image object-cover h-full w-full"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
-            <button
-              onClick={addToCart}
-              className="bg-book-accent text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
-            >
-              Add to Cart
-            </button>
-          </div>
         </div>
         <div className="p-4">
           <div className="flex items-center space-x-1 mb-2">
@@ -56,6 +48,12 @@ const BookCard = ({ book }) => {
             <span className="font-bold text-book-accent">${book.price.toFixed(2)}</span>
             <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-full">{book.category}</span>
           </div>
+          <button
+            onClick={addToCart}
+            className="w-full mt-3 bg-book-accent text-white px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition-all duration-200"
+          >
+            Buy Now
+          </button>
         </div>
       </Link>
     </div>
