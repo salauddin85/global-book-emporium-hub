@@ -7,7 +7,7 @@ export default {
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx,js,jsx}",
 	],
 	prefix: "",
 	theme: {
@@ -100,5 +100,35 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		require("daisyui")
+	],
+	daisyui: {
+		themes: [
+			{
+				light: {
+					...require("daisyui/src/theming/themes")["light"],
+					"primary": "#9b87f5",
+					"secondary": "#1A1F2C",
+					"accent": "#9b87f5",
+					"neutral": "#F6F7FB",
+					"base-100": "#ffffff",
+				},
+				dark: {
+					...require("daisyui/src/theming/themes")["dark"],
+					"primary": "#9b87f5",
+					"secondary": "#1A1F2C",
+					"accent": "#9b87f5",
+					"neutral": "#1A1F2C",
+					"base-100": "#1A1F2C",
+				},
+			},
+		],
+		darkTheme: "dark",
+		base: true,
+		styled: true,
+		utils: true,
+		logs: true,
+	},
 } satisfies Config;
